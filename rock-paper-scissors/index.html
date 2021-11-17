@@ -20,20 +20,11 @@ let computerPlay = () => {
 
 
 
-// Create a loop that uses playRound function until 
-            // if computer = score of 5 then computer wins
-            // if player = score of 5 then player wins
-
-// Each time a playRound returns Win! add +1 to player score
-// Each time a playRound returns Loss! Add +1 to computer score
-// Each time a playRound returns Tie! Do nothing.
-// 
-// restart game after first to 5 is completed
-
-
-
 let computerScore = 0;
 let playerScore = 0;
+
+
+// plays play round until player or ocmputer is at a score of 5 then prints message for the first to reach a score of 5
 
 let playGame = () => {
     while (playerScore < 5 && computerScore < 5) {
