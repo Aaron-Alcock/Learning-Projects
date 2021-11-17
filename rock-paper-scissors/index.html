@@ -20,35 +20,82 @@ let computerPlay = () => {
 
 
 
+// Create a loop that uses playRound function until 
+            // if computer = score of 5 then computer wins
+            // if player = score of 5 then player wins
+
+// Each time a playRound returns Win! add +1 to player score
+// Each time a playRound returns Loss! Add +1 to computer score
+// Each time a playRound returns Tie! Do nothing.
+// 
+// restart game after first to 5 is completed
 
 
-// this function plays a single round 
+
+let computerScore = 0;
+let playerScore = 0;
+
+let playGame = () => {
+    while (playerScore < 5 && computerScore < 5) {
+     playRound();
+    if (computerScore == 5) {
+        console.log("Computer Wins!");
+    }
+    else if (playerScore == 5) {
+        console.log("Player Wins!");
+    }
+
+}
+}
 
 
+
+
+// this function plays a single round, will prompt the user for input each time the function is called
 let playRound = () => {
 
-    let playerSelection = prompt('Rock paper or');
+    let playerSelection = prompt('Rock paper or Scissors');
     let computerSelection = computerPlay();
-
+// this code is to allow any case of letters to be entered and still allow for the code to function
     computerSelection = computerPlay().toLowerCase();
     playerSelection = playerSelection.toLowerCase();
 
   if (playerSelection == computerSelection) {
+    console.log("Tie!")
     return ("Tie!");
 
 
     } else if (playerSelection == 'rock' && computerSelection == 'paper') {
-    return ("Loss!");
+    computerScore = computerScore + 1;
+    console.log(`Player score is ${playerScore}, Computer score is ${computerScore}.`);
+    return ("Loss!")
+
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-    return ("Win!");
+        playerScore = playerScore + 1;
+        console.log(`Player score is ${playerScore}, Computer score is ${computerScore}.`);
+        return ("Win!") 
+
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-    return ("Loss!");
+        computerScore = computerScore + 1;
+        console.log(`Player score is ${playerScore}, Computer score is ${computerScore}.`);
+        return ("Loss!") 
+
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-    return ("Win");
+        playerScore = playerScore + 1;
+        console.log(`Player score is ${playerScore}, Computer score is ${computerScore}.`);
+        return ("Win") 
+    
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-    return ("Win!");
+        playerScore = playerScore + 1;
+        console.log(`Player score is ${playerScore}, Computer score is ${computerScore}.`);
+
+        return ("Win!") 
+    
     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-    return ("Loss!");
+        computerScore = computerScore + 1;
+        console.log(`Player score is ${playerScore}, Computer score is ${computerScore}.`);
+        return ("Loss!") 
+
     } else {
         return ("Failed!");
     }
