@@ -13,47 +13,49 @@
     // This allows the computer to play rock paper or scissors
     
 let computerPlay = () => {
-    let choice = ['rock', 'paper', 'scissors']
+    let choice = ['rock', 'paper', 'scissors'];
     let random = Math.floor(Math.random() * choice.length);
-console.log(random, choice[random]);
+    return (random, choice[random]);
+}
+
+
+
 
 
 // this function plays a single round 
 
-const playerSelection = "rock";
-const computerSelection = computerPlay();
 
-}
+let playRound = () => {
 
 
-let playRound = (playerSelection, computerSelection) => {
+    computerSelection = computerPlay().toLowerCase();
+    playerSelection = playerSelection.toLowerCase();
 
-// make this with else if statements instead.
+  if (playerSelection == computerSelection) {
+    return ("Tie!");
 
- switch (true) {
-     case playerSelection === 'rock' && computerSelection === 'rock':
-     return "You: rock | Computer: 'rock'= Tie!";
-     break;
+    } else if (playerSelection == 'rock' && computerSelection == 'paper') {
+    return ("Loss!");
+    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+    return ("Win!");
+    } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+    return ("Loss!");
+    } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+    return ("Win");
+    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+    return ("Win!");
+    } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+    return ("Loss!");
+    } else {
+        return ("Failed!");
+    }
+        
+    }
 
-     case playerSelection === 'rock' && computerSelection === 'paper':
-     return "You: rock | Computer: 'paper'= Loss!";
-     break;
-
-     case playerSelection === 'rock' && computerSelection === 'scissors':
-     return "You: rock | Computer: 'scissors'= Win!";
-     break;
-
-     default:
-         return "failed"
-         break;
-
- }
+let playerSelection = 'rock';
+let computerSelection = computerPlay();
 
 
-}
-
-
-; 
 
 </script>
 
