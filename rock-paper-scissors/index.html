@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RPS</title>
 </head>
 <body>
-
-    <button class='button'></button>
-    <button></button>
-    <button></button>
-
-
-
-   
+<div id='rps-buttons'>
+    <button id='button-rock'>'Rock'</button>
+    <button id='button-paper'>'Paper'</button>
+    <button id='button-scissors'>'Scissors'</button>
+</div>
 <script>
     
    
@@ -30,11 +27,12 @@ let computerScore = 0;
 let playerScore = 0;
 
 // this function plays a single round, will prompt the user for input each time the function is called
-let playRound = () => {
 
-    let playerSelection = prompt('Rock paper or Scissors');
+let playRound = (e) => {
+    let playerSelection = (e)
+    console.log(playerSelection)
     let computerSelection = computerPlay();
-// this code is to allow any case of letters to be entered and still allow for the code to function
+    // this code is to allow any case of letters to be entered and still allow for the code to function
     computerSelection = computerPlay().toLowerCase();
     playerSelection = playerSelection.toLowerCase();
 
@@ -74,13 +72,32 @@ let playRound = () => {
         console.log(`Player score is ${playerScore}, Computer score is ${computerScore}.`);
         return ("Loss!") 
 
-    } else {
-        return ("Failed!");
+    } else {string
     }
+}
+    let buttonRock = document.querySelector('#button-rock') 
+    let buttonPaper = document.querySelector('#button-paper')
+    let buttonScissors = document.querySelector('#button-scissors')
+    
+    let buttonRockAnswer = buttonRock.addEventListener('click', e => {
+        playRound('rock');
+
+    }
+    );
+
+    buttonPaper.addEventListener('click', e => {
+        playRound('paper');
+    }
+    );
         
+        
+    buttonScissors.addEventListener('click', e => {
+        playRound('scissors');
+
     }
-
-
+    );
+        
+  
 
 
 </script>
