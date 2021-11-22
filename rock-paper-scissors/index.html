@@ -7,9 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+    <button class='button'></button>
+    <button></button>
+    <button></button>
+
+
+
+   
 <script>
     
+   
     // This allows the computer to play rock paper or scissors
     
 let computerPlay = () => {
@@ -18,29 +26,8 @@ let computerPlay = () => {
     return (random, choice[random]);
 }
 
-
-
 let computerScore = 0;
 let playerScore = 0;
-
-
-// plays play round until player or ocmputer is at a score of 5 then prints message for the first to reach a score of 5
-
-let playGame = () => {
-    while (playerScore < 5 && computerScore < 5) {
-     playRound();
-    if (computerScore == 5) {
-        console.log("Computer Wins!");
-    }
-    else if (playerScore == 5) {
-        console.log("Player Wins!");
-    }
-
-}
-}
-
-
-
 
 // this function plays a single round, will prompt the user for input each time the function is called
 let playRound = () => {
