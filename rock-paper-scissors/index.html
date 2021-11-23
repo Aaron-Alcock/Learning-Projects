@@ -5,14 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass&family=Roboto+Condensed:wght@300&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet"> 
 </head>
-<body>
-<div id='rps-buttons'>
-    <button id='button-rock'>'Rock'</button>
-    <button id='button-paper'>'Paper'</button>
-    <button id='button-scissors'>'Scissors'</button>
+<body class='background-image'>
+<header class="header">
+    <h1 class="h1-title">Aaron's Rock Paper Scissors Game</h1>
+    <h2 class='first-to-five'>First to 5 wins!</h2>
+</header>
+<div class="play-area"> 
+    <span id='rps-buttons'>
+        <div class='all-buttons'>
+            <button id='button-rock'>'Rock'</button>
+            <button id='button-paper'>'Paper'</button>
+            <button id='button-scissors'>'Scissors'</button>
+        </div>
+    </span>
+    <div class="scoreboard score-text">
+        <p class="player-score">Player Score :</p>
+        <p class='computer-score'>Computer Score :</p>
+    </div>
 </div>
+
 <script>
+
     
    
     // This allows the computer to play rock paper or scissors
@@ -36,6 +54,8 @@ let playRound = (e) => {
     computerSelection = computerPlay().toLowerCase();
     playerSelection = playerSelection.toLowerCase();
 
+
+    // An if else statement, each check will have every RPS outcome for both the player and computer selections.
   if (playerSelection == computerSelection) {
     console.log("Tie!")
     return ("Tie!");
@@ -74,7 +94,8 @@ let playRound = (e) => {
 
     } else {string
     }
-}
+}   
+// create three variables for each button type, one for each RPS input. Each event listener will look for a click of the mouse and use the playRound function with a string for each RPS button.
     let buttonRock = document.querySelector('#button-rock') 
     let buttonPaper = document.querySelector('#button-paper')
     let buttonScissors = document.querySelector('#button-scissors')
@@ -84,7 +105,7 @@ let playRound = (e) => {
 
     }
     );
-
+ 
     buttonPaper.addEventListener('click', e => {
         playRound('paper');
     }

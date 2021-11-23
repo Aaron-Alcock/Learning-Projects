@@ -1,0 +1,32 @@
+html { 
+    background: url(robot.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Roboto mono';
+    color: rgb(241, 235, 222);
+  }
+
+
+  .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+.play-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 900px;
+    margin-right: 2400px;
+
+}
+
+
+.score-text {
+    font-size: 36px;
+}
